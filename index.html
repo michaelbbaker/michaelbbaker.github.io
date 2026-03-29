@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Michael Baker</title>
+  <base target="_blank">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 2.0;
+      color: #222;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .site {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---- Header ---- */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1.6rem;
+    }
+
+    .header-identity {
+      margin-right: auto;
+      white-space: nowrap;
+    }
+
+    .header-name {
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .header-name:hover {
+      text-decoration: none;
+    }
+
+    .header-socials {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
+    }
+
+    .header-socials a {
+      display: block;
+      width: 16px;
+      height: 16px;
+      color: currentColor;
+      opacity: 0.4;
+    }
+
+    .header-socials a:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+
+    .header-socials svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.6rem;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    nav a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* header spacer */
+    .header-spacer {
+      height: 4.5rem;
+    }
+
+    /* ---- Links ---- */
+
+    a {
+      color: revert;
+      text-decoration: revert;
+    }
+
+    a:hover {
+      text-decoration: revert;
+    }
+
+    a:visited {
+      color: revert;
+    }
+
+    /* ---- Hero ---- */
+
+    .hero {
+      padding: 6rem 0 2rem;
+    }
+
+    .hero-name {
+      font-size: 13px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-tagline {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    .hero-intro {
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-contact {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #888;
+    }
+
+    .hero-contact a {
+      color: #888;
+    }
+
+    /* ---- Sections ---- */
+
+    .section {
+      padding-top: 6rem;
+    }
+
+    .section-heading {
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 2rem;
+    }
+
+    .section-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---- Practice areas ---- */
+
+    .practice-area {
+      padding-top: 5rem;
+    }
+
+    .practice-area:first-child {
+      padding-top: 0;
+    }
+
+    .practice-heading {
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+    }
+
+    .practice-area p {
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #888;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .skills-list {
+      list-style: none;
+      color: #888;
+      font-size: 10px;
+      line-height: 2.2;
+    }
+
+    /* ---- Project cards ---- */
+
+    .projects-section {
+      padding-top: 6rem;
+    }
+
+    .project {
+      margin-bottom: 5rem;
+    }
+
+    .project-title {
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .project-meta {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #888;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-exhibitions {
+      font-size: 10px;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .project-role {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-description {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-description p {
+      margin-bottom: 1rem;
+    }
+
+    .project-skills {
+      font-size: 10px;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+
+    .project-link {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .project-link a {
+      color: #222;
+    }
+
+    /* ---- Incomplete project placeholder ---- */
+
+    .project--incomplete {
+      border-left: 2px solid #ccc;
+      padding-left: 1.5rem;
+    }
+
+    .placeholder-note {
+      font-size: 10px;
+      color: #c44;
+      font-style: italic;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    /* ---- CV embed ---- */
+
+    #cv-container h3 {
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #cv-container ul {
+      list-style: none;
+    }
+
+    #cv-container li {
+      margin-bottom: 0.25rem;
+    }
+
+    #cv-container li strong {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    .cv-subtitle {
+      color: #888;
+      font-style: italic;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ---- Simple list sections ---- */
+
+    .list-section {
+      padding-top: 6rem;
+    }
+
+    .list-section ul {
+      list-style: none;
+    }
+
+    .list-section li {
+      margin-bottom: 0.75rem;
+    }
+
+    .list-entry-title {
+      font-size: 11px;
+    }
+
+    .list-entry-detail {
+      font-size: 10px;
+      color: #888;
+    }
+
+    .bib-entry {
+      margin-bottom: 1.5rem;
+      font-size: 11px;
+      color: #555;
+    }
+
+    .bib-entry em {
+      font-style: italic;
+    }
+
+    /* ---- Footer ---- */
+
+    footer {
+      padding: 6rem 0 4rem;
+      font-size: 10px;
+      color: #888;
+      line-height: 2.0;
+    }
+
+    footer a {
+      color: #888;
+    }
+
+    /* ---- Responsive ---- */
+
+    @media (max-width: 640px) {
+      .site-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 1.25rem;
+      }
+
+      .header-spacer {
+        height: 6rem;
+      }
+
+      .site {
+        padding: 0 1.25rem;
+      }
+
+      nav {
+        gap: 0.3rem 1rem;
+      }
+
+      .hero {
+        padding: 4rem 0 2rem;
+      }
+
+      .section,
+      .practice-area,
+      .projects-section,
+      .list-section {
+        padding-top: 4rem;
+      }
+    }
+
+    /* ---- Broken image fallback ---- */
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    img[data-fallback] {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="site-header">
+    <div class="header-identity">
+      <a href="#hero" class="header-name">Michael Baker</a>
+      <div class="header-socials" id="header-socials">
+        <a href="mailto:michaelbbaker@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/michael-b-ba41a65a " data-social="linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+        <a href="https://github.com/michaelbbaker/mbbaker.net" data-social="github" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg></a>
+        <a href="https://mbbaker.bandcamp.com/" data-social="bandcamp" aria-label="Bandcamp"><svg viewBox="0 0 24 24"><path d="M22 6L14.2 18H2L9.8 6H22z"/></svg></a>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <!-- <a href="#practice">Practice</a> -->
+      <!-- <a href="#projects">Projects</a> -->
+      <!-- <a href="#exhibitions">Exhibitions</a> -->
+      <!-- <a href="#bibliography">Bibliography</a> -->
+      <!-- <a href="#education">Education</a> -->
+      <a href="#cv">CV</a>
+    </nav>
+  </header>
+
+  <div class="site">
+    <div class="header-spacer"></div>
+
+    <!--
+    <section class="hero" id="hero">
+      <h1 class="hero-name">Michael Baker</h1>
+      <p class="hero-tagline">Audio Director · Interactive Audio Software · Composition ·  Montréal</p>
+      <div class="hero-intro-container">
+        <p class="hero-intro">Put hero intro content here</p>
+      </div>
+      <p class="hero-contact">Put contact info here</p>
+    </section>
+    -->
+
+    <!-- About -->
+    <section class="section" id="about">
+      <h2 class="section-heading">About</h2>
+      <div class="section-body">
+        <p>
+I have been the audio director at Daily Tous Les Jours for almost 10 years. Responsible for composition, real-time audio software and system design, interaction design and many strange and specific tasks that come up in such interdisciplinary, collaborative processes. I’ve designed and installed many projects in many different places across North America, Europe, Australia and the Middle East.
+</p><p>
+My dream projects are the ones where music, software, interaction and interface are inseparable, with a similarly interdependent design process. Projects where the link between gesture and music feels both surprising and intuitive. As such, I’ve come to think of myself more and more as a type of strange instrument builder. 
+</p>
+Lately, in my personal practice, I have been interested in designing for accessibility and progressive ability, with low physical and cognitive barriers of entry, that nonetheless respond to deeper/subtler levels of interaction.</p>
+      </div>
+    </section>
+
+    <!--
+    <section class="section" id="practice">
+      <h2 class="section-heading">Practice</h2>
+      <div id="practice-areas">
+        <div class="practice-area">
+          <h3 class="practice-heading">Put practice area title here</h3>
+          <p>Put practice area description here</p>
+          <p class="skills-label">What this looks like in practice:</p>
+          <ul class="skills-list">
+            <li>Put skills here</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+      <h2 class="section-heading">Projects</h2>
+      <div id="projects-container">
+        <article class="project">
+          <h3 class="project-title">Put project title here</h3>
+          <p class="project-meta">Put year — location here</p>
+          <p class="project-role">Put role here</p>
+          <div class="project-description">
+            <p>Put project description here</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="list-section" id="exhibitions">
+      <h2 class="section-heading">Exhibitions &amp; Events</h2>
+      <div>
+        <ul>
+          <li>Put exhibition entries here</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="list-section" id="bibliography">
+      <h2 class="section-heading">Bibliography &amp; Media</h2>
+      <div>
+        <div class="bib-entry">Put bibliography entries here</div>
+      </div>
+    </section>
+
+    <section class="list-section" id="publications">
+      <h2 class="section-heading">Publications</h2>
+      <div>
+        <div class="bib-entry">Put publication entries here</div>
+      </div>
+    </section>
+
+    <section class="list-section" id="education">
+      <h2 class="section-heading">Education</h2>
+      <p>Put education content here</p>
+    </section>
+    -->
+
+    <!-- CV -->
+    <section class="list-section" id="cv">
+      <h2 class="section-heading">CV</h2>
+      <div id="cv-container">
+
+        <h3>Education</h3>
+        <ul>
+          <li>2010 — BFA (distinction), Concordia University, Montréal, QC, Canada</li>
+        </ul>
+
+        <h3>EMPLOYMENT</h3>
+        <ul>
+          <li>2017-Current  — 	Audio Director, Daily Tous Les Jours</li>
+          <li>2012-2017  — 	Creative Technologist, Daily Tous les Jours</li>
+        </ul>
+
+
+
+
+        <h3>Production Work (Daily Tous Les Jours)</h3>
+        <p class="cv-subtitle">(Selected)</p>
+        <ul>
+          <li><strong>Creative Direction</strong></li>
+          <li>2026 — Fans Can Dance, The Bentway, Toronto, ON, CA (forthcoming)</li>
+          <li><strong>Audio Direction, Software Development</strong></li>
+          <li>2025 — <a href="https://www.dailytouslesjours.com/en/work/human-perches">Perchoirs Humains</a>, UQROP, St. Jude, QC, CA</li>
+          <li>2025 — Esquisse, Angus Métropole, Montréal, QC, CA</li>
+          <li><strong>Concept Development, Audio Composition, Interaction Design and Software Development</strong></li>
+          <li>2025 — <a href="https://www.dailytouslesjours.com/en/work/forest-mixer">Forest Mixer</a>, Hornby Island, BC, CA</li>
+          <li>2024 — <a href="https://www.dailytouslesjours.com/en/work/spaghetti-chorus">Spaghetti Chorus</a>, National Gallery of Canada, Ottawa, ON, CA</li>
+          <li>2024 — <a href="https://www.dailytouslesjours.com/en/work/nuages">Nuages</a>, North Boulder Library, CO, USA</li>
+          <li>2024 — <a href="https://www.dailytouslesjours.com/en/work/duets-musical-furniture">Duetti</a>, Milan, IT</li>
+          <li>2023 — <a href="https://www.dailytouslesjours.com/en/work/river-lines">River Lines</a>, Gaslight District, Cambridge, ON, CA</li>
+          <li>2023 — <a href="https://www.dailytouslesjours.com/en/work/whistle-two-ready-2">Whistle Two Ready</a>, Nashville Davidson County, TN, US</li>
+          <li>2022 — <a href="https://www.dailytouslesjours.com/en/work/daydreamer">Daydreamer</a>, City of South Bend, IN, US</li>
+          <li>2022 — <a href="https://www.dailytouslesjours.com/en/work/cimbalom-circle">Cimbalom Circle</a>, Budapest House of Music, HUN</li>
+          <li>2021 — <a href="https://www.dailytouslesjours.com/en/work/walk-walk-dance">Walk Walk Dance</a>, The Bentway, Toronto, ON, CA</li>
+          <li>2021 — <a href="https://www.dailytouslesjours.com/en/work/balancing-act">Balancing Act</a>, First Ward Park, Charlotte, NC, USA</li>
+          <li>2019 — <a href="https://www.dailytouslesjours.com/en/work/the-pearl-divers">The Pearl Divers</a>, Dubai Creek Harbour, Dubai, UAE</li>
+          <li>2017 — <a href="https://www.dailytouslesjours.com/en/work/i-heard-there-was-a-secret-chord">I Heard There Was a Secret Chord</a>, Musée d'art contemporain de Montréal, QC, CA</li>
+          <li>2017 — <a href="https://www.dailytouslesjours.com/en/work/hello-trees">Hello Trees</a>, Discovery Green, Houston, TX, USA</li>
+          <li>2016 — <a href="https://www.dailytouslesjours.com/en/work/mesa-musical-shadows">Mesa Musical Shadows</a>, Mesa Arts Center, Mesa, AZ, USA</li>
+        </ul>
+
+        <h3>Events and Exhibitions (Daily Tous Les Jours)</h3>
+        <p class="cv-subtitle">(Selected)</p>
+        <ul>
+          <li>2025 — Hello, Hello, Sanremo Festival, IT</li>
+          <li>2024 — Walk, Walk, Dance, Detroit Design Month</li>
+          <li>2023 — Secret Chord, Canal Connect, Madrid, ES</li>
+          <li>2022 — Secret Chord, Biennale Nemo, Paris, FR</li>
+          <li>2019 — Secret Chord, 24/7 A Wake-Up Call of Our Non-Stop World, Somerset House, London, UK</li>
+        </ul>
+
+        <h3>Publications (on behalf of Daily Tous Les Jours)</h3>
+        <ul>
+          <li><a href="https://otheredge.com.au/creating-new-spaces-podcast/designing-public-interactions-through-sound-with-michael-baker/">"Designing public interactions through sound with Michael Baker"</a>, Creating New Spaces Podcast, Feb 2026</li>
+          <li><a href="https://blog.americansforthearts.org/2019/05/15/prototyping-again-with-feeling">"Prototyping: Again, with feeling!"</a>, ARTSBlog, Americans for the Arts, Aug 17, 2017</li>
+        </ul>
+
+        <h3>Performance</h3>
+        <ul>
+          <li><strong>Personal (Selected)</strong></li>
+          <li>2024 — Tidal Pool, Devenir(s) Corps, Montpellier, QC</li>
+          <li>2013 — Inuvik Sky Synth, Black box theatre, Soka University of America, CA (Max/MSP program/composition)</li>
+          <li>2012 — Inuvik Sky Synth, 60x60 Canada BC Creative Hub, Vancouver, BC (Max/MSP program/composition)</li>
+          <li>2011 — Wire Forest, Wooden Sea, 60X60 Canada: Toronto Electroacoustic Symposium (Electro-Acoustic composition)</li>
+          <li>2011 — Wire Forest, Wooden Sea, Livewire Festival: UMBC, Maryland (Electro-Acoustic composition)</li>
+          <li>2011 — CLOrk (Concordia Laptop Orchestra), CEC Symposium: Concordia, Montréal, QC</li>
+        </ul>
+
+        <h3>Workshops</h3>
+        <ul>
+          <li><strong>Personal</strong></li>
+          <li>Instrument Building for Kids — Batiment 7, Aug 22, 2022</li>
+          <li>Making and Using Contact Mics — Pop Montréal, Sept 2012</li>
+          <li>Making and Using Contact Mics — CKUT kids' radio, July 2012</li>
+          <li>Making and Using Contact Mics — Concordia ARTX guest lecture, February 2011</li>
+          <li><strong>Daily Tous Les Jours</strong></li>
+          <li>Designing sound for Interactivity — NOBO Library, June 29, 2024</li>
+          <li>How We Make Shadows Make Music — Montréal Maker Faire, Nov 16–17, 2018</li>
+        </ul>
+
+        <h3>Grants, Residencies and Scholarships</h3>
+        <ul>
+          <li><strong>Personal</strong></li>
+          <li>2024 — Canada Arts Grant development, Tidal Pool</li>
+          <li>2024 — Residency, 1 week, Devenir(s) Corps, Montpellier, QC, Summer 2024</li>
+          <li>2012 — Campaign for a New Millennium Student Contribution Scholarship (Concordia)</li>
+        </ul>
+
+        <h3>Awards</h3>
+        <p class="cv-subtitle">Daily Tous Les Jours (selected)</p>
+        <ul>
+          <li>2022 — Best artwork in public space, Hub Montréal, Daydreamer</li>
+          <li>2022 — TOP10 Public Space Project, Azure Magazine, Cimbalom Circle</li>
+          <li>2022 — Winner Interaction Award, Core 77, Cimbalom Circle</li>
+          <li>2021 — Best Optimizing – IxDA, Pearl Divers</li>
+          <li>2017 — Americans Association for the Arts Award, Americans for the Arts, Musical Shadows</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p><!-- Put footer content here --></p>
+    </footer>
+  </div>
+</body>
+</html>
